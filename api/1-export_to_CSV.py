@@ -22,8 +22,8 @@ if __name__ == '__main__':
     total_number_of_tasks = len(todos_info)
 
     with open(str(employee_id) + '.csv', "w") as file:
-        [file.write('"' + str(employee_id) + '",' +
-                    '"' + employee_username + '",' +
-                    '"' + str(task["completed"]) + '",' +
-                    '"' + task["title"] + '",' + "\n")
-         for task in todos_info]
+        for task in todos_info:
+            file.write('"' + str(employee_id) + '",' +
+                      '"' + employee_username + '",' +
+                      '"' + str(task["completed"]) + '",' +
+                      '"' + task["title"] + '"' + "\n")
